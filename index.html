@@ -90,9 +90,10 @@
   }
   html.dark header{background:rgba(18,32,26,.86);}
   nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 26px;}
-  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+
   .brand img{width:42px; height:42px; border-radius:10px;}
-  .brand-text{display:flex; flex-direction:column; line-height:1.1;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; flex:none; white-space:nowrap;}
+  .brand-text{display:flex; flex-direction:column; line-height:1.1; white-space:nowrap;}
   .brand-text b{font-family:'Playfair Display'; font-size:1.15rem; color:var(--forest); letter-spacing:.5px;}
   .brand-text span{font-size:.62rem; letter-spacing:1.5px; color:var(--gold); text-transform:uppercase;}
   .nav-links{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
@@ -113,9 +114,10 @@
   .pill-toggle button.active{background:var(--forest); color:#fff;}
   .burger{display:none; background:none; border:none; font-size:1.4rem; color:var(--forest); cursor:pointer;}
 
-  @media (max-width:940px){
+  nav.wrap{flex-wrap:nowrap;}
+  @media (max-width:1180px){
     .nav-links{position:fixed; top:70px; left:0; right:0; background:var(--cream); flex-direction:column;
-      padding:20px 26px 30px; gap:18px; box-shadow:var(--shadow); transform:translateY(-140%); transition:transform .35s ease; }
+      padding:20px 26px 30px; gap:18px; box-shadow:var(--shadow); transform:translateY(-140%); transition:transform .35s ease; z-index:99; }
     .nav-links.open{transform:translateY(0);}
     .burger{display:block;}
   }
@@ -378,10 +380,6 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-tools">
-      <div class="pill-toggle" id="currencyToggle">
-        <button class="active" data-cur="BDT">BDT</button>
-        <button data-cur="USD">USD</button>
-      </div>
       <button class="icon-btn" id="darkToggle" title="Toggle dark mode" aria-label="Toggle dark mode">☾</button>
       <button class="burger" id="burgerBtn" aria-label="Menu">☰</button>
     </div>
@@ -791,22 +789,6 @@
   darkToggle.addEventListener('click', () => {
     document.documentElement.classList.toggle('dark');
     darkToggle.textContent = document.documentElement.classList.contains('dark') ? '☀' : '☾';
-  });
-
-  // Currency toggle
-  const curButtons = document.querySelectorAll('#currencyToggle button');
-  curButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      curButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cur = btn.dataset.cur;
-      document.querySelectorAll('.price').forEach(p => {
-        const val = cur === 'BDT' ? p.dataset.bdt : p.dataset.usd;
-        const unit = p.querySelector('.cur');
-        p.childNodes[0].textContent = val + ' ';
-        p.appendChild(unit);
-      });
-    });
   });
 
   // Product details toggle
