@@ -88,10 +88,16 @@
       { leaf:'🌿', name:'Neem', benefit:'A natural antibacterial that helps clear blemishes and keep skin balanced, especially for oily or acne-prone types.', found:['Deep Fresh'] },
       { leaf:'🌼', name:'Turmeric', benefit:'Brightens dull skin and evens tone, prized for generations as a natural glow-enhancer.', found:['Glow Bloom','Deep Fresh'] },
       { leaf:'🍯', name:'Honey', benefit:'A humectant that draws in moisture, leaving skin nourished, soft, and naturally radiant.', found:['Glow Bloom','Aqua Bloom'] },
-      { leaf:'🥥', name:'Coconut Oil', benefit:'Deeply conditions hair and skin, reducing dryness and adding lasting softness and shine.', found:['Silk Shine','Fresh Dew'] },
-      { leaf:'🌾', name:'Vitamin E', benefit:'An antioxidant that protects skin from daily stress while supporting a smoother, healthier texture.', found:['Silk Shine','Aqua Bloom'] },
+      { leaf:'🥥', name:'Coconut Oil', benefit:'Deeply conditions hair and skin, reducing dryness and adding lasting softness and shine.', found:['Silk Shine','Fresh Dew','Silk Nourish'] },
+      { leaf:'🌾', name:'Vitamin E', benefit:'An antioxidant that protects skin from daily stress while supporting a smoother, healthier texture.', found:['Silk Shine','Aqua Bloom','Silk Nourish'] },
       { leaf:'💧', name:'Glycerin', benefit:"A gentle humectant that keeps skin hydrated for hours, core to Veloura's daily-use formulas.", found:['Fresh Dew','Deep Fresh'] },
       { leaf:'⚫', name:'Charcoal', benefit:'Draws out impurities and excess oil for a deep, refreshing clean without over-drying.', found:['Deep Fresh'] },
+      { leaf:'🫒', name:'Amla', benefit:'Indian gooseberry rich in antioxidants that strengthens hair roots and boosts natural shine.', found:['Silk Nourish'] },
+      { leaf:'🌱', name:'Bhringraj', benefit:'A traditional herb known to reduce hair fall and support thicker, healthier-looking hair.', found:['Silk Nourish'] },
+      { leaf:'🍃', name:'Mint Extract', benefit:'Cools and freshens the mouth while helping clean teeth and gums.', found:['Fresh Smile'] },
+      { leaf:'🌰', name:'Clove', benefit:'A natural antiseptic that supports gum health and helps fight bad breath.', found:['Fresh Smile'] },
+      { leaf:'🟤', name:'Cinnamon', benefit:'Adds a warm herbal note while helping keep the mouth feeling clean and fresh.', found:['Fresh Smile'] },
+      { leaf:'🌼', name:'Chamomile', benefit:'Soothes gums naturally while supporting overall oral comfort.', found:['Fresh Smile'] },
     ];
     function renderIndexCard(i) {
       const ing = ingredients[i];
